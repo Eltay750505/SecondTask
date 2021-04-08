@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bank-deposit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="schema.xsd">
+
+    <belarusbank-deposit id="w1">
+        <bank-name>Belarusbank</bank-name>
+        <depositor>Eltay</depositor>
+        <profitability>3.5</profitability>
+        <time-constraints>2021-04</time-constraints>
+        <amount-on-deposit>15.0</amount-on-deposit>
+        <deposit-type>demand</deposit-type>
+        <bank-country>belarus</bank-country>
+    </belarusbank-deposit>
+
+</bank-deposit>

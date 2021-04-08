@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.org/banks"
+        xmlns:tns="http://www.example.org/banks"
+        attributeFormDefault="unqualified" elementFormDefault="qualified">
+    <element name="bank-deposit">
+        <complexType>
+            <sequence>
+                <element ref="tns:device" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <simpleType name="bankID">
+        <restriction base="ID">
+            <pattern value="\w{1,16}"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="banks">
+        <sequence>
+            <element name="bank-name" type="string" />
+            <element name="depositor" type="string" />
+            <element name="profitability">
+                <xsd:restriction base="xsd:double">
+                    <xsd:minInclusive value="0.0"></xsd:minInclusive>
+                    <xsd:maxInclusive value="100.0"></xsd:maxInclusive>
+                </xsd:restriction>
+            </element>
+            <element name="time-constraints" type="gYearMonth" />
+            <element name="amount-on-deposit" >
+                <xsd:restriction base="xsd:double">
+                    <xsd:minInclusive value="0"></xsd:minInclusive>
+                </xsd:restriction>
+            </element>
+        </sequence>
+        <attribute name="id" type="tns:bankID" use="required" />
+        <attribute name="is-open" use="optional" type="boolean" default="true" />
+    </complexType>
+
+    <complexType name="belarusbankDeposit">
+        <complexContent>
+            <extension base="tns:banks">
+                <sequence>
+                    <element name="bankCountry" type="tns:bank-country" />
+                    <element name="depositType" type="tns:deposit-type" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="rosbankDeposit">
+        <complexContent>
+            <extension base="tns:banks">
+                <sequence>
+                    <element name="bankCountry" type="tns:bank-country" />
+                    <element name="depositType" type="tns:deposit-type" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="deposit-type">
+        <xsd:restriction>
+            <xsd:enumeration value="demand"></xsd:enumeration>
+            <xsd:enumeration value="term"></xsd:enumeration>
+            <xsd:enumeration value="estimated"></xsd:enumeration>
+            <xsd:enumeration value="cumulative"></xsd:enumeration>
+            <xsd:enumeration value="savings"></xsd:enumeration>
+            <xsd:enumeration value="metal"></xsd:enumeration>
+        </xsd:restriction>
+    </complexType>
+
+    <complexType name="bank-country">
+        <xsd:restriction>
+            <xsd:enumeration value="belarus"></xsd:enumeration>
+            <xsd:enumeration value="russia"></xsd:enumeration>
+            <xsd:enumeration value="lithuania"></xsd:enumeration>
+            <xsd:enumeration value="germany"></xsd:enumeration>
+            <xsd:enumeration value="poland"></xsd:enumeration>
+        </xsd:restriction>
+    </complexType>
+
+    <element name="banks" type="tns:banks" abstract="true" />
+    <element name="belarusbank-deposit" type="tns:belarusbankDeposit" substitutionGroup="tns:banks" />
+    <element name="rosbank-deposit" type="tns:rosbankDeposit" substitutionGroup="tns:banks" />
+</schema>
