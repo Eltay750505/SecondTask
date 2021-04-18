@@ -1,6 +1,6 @@
 package ru.gmail.gasimov.secondtask.model;
 
-public enum DepositTypeEnum {
+public enum DepositType {
     DEMAND,
     TERM,
     ESTIMATED,

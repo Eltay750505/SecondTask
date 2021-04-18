@@ -1,6 +1,6 @@
 package ru.gmail.gasimov.secondtask.model;
 
-public enum BankCountryEnum {
+public enum BankCountry {
     BELARUS,
     RUSSIA,
     LITHUANIA,

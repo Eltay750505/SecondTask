@@ -3,15 +3,17 @@ package ru.gmail.gasimov.secondtask.model;
 import java.time.YearMonth;
 import java.util.Objects;
 
-public abstract class Banks {
+public abstract class BankDeposit {
     private String id;
     private String bankName;
-    private String depositor;
+
     private double profitAbility;
+
     private YearMonth timeConstraints;
     private double amountOnDeposit;
     private boolean isOpen;
-
+    private BankCountry bankCountry;
+    private DepositType depositType;
     public String getId() {
         return id;
     }
@@ -26,14 +28,6 @@ public abstract class Banks {
 
     public void setBankName(String bankName) {
         this.bankName = bankName;
-    }
-
-    public String getDepositor() {
-        return depositor;
-    }
-
-    public void setDepositor(String depositor) {
-        this.depositor = depositor;
     }
 
     public double getProfitAbility() {
@@ -60,6 +54,30 @@ public abstract class Banks {
         this.amountOnDeposit = amountOnDeposit;
     }
 
+    public boolean isOpen() {
+        return isOpen;
+    }
+
+    public void setOpen(boolean open) {
+        isOpen = open;
+    }
+
+    public BankCountry getBankCountry() {
+        return bankCountry;
+    }
+
+    public void setBankCountry(BankCountry bankCountry) {
+        this.bankCountry = bankCountry;
+    }
+
+    public DepositType getDepositType() {
+        return depositType;
+    }
+
+    public void setDepositType(DepositType depositType) {
+        this.depositType = depositType;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -69,13 +87,12 @@ public abstract class Banks {
             return false;
         }
 
-        Banks banks = (Banks) obj;
+        BankDeposit banks = (BankDeposit) obj;
 
         return Double.compare(banks.profitAbility, profitAbility) == 0 &&
                 Double.compare(banks.amountOnDeposit, amountOnDeposit) == 0 &&
                 Objects.equals(id, banks.id) &&
                 Objects.equals(bankName, banks.bankName) &&
-                Objects.equals(depositor, banks.depositor) &&
                 Objects.equals(timeConstraints, banks.timeConstraints);
     }
 
@@ -88,11 +105,18 @@ public abstract class Banks {
         return result;
     }
 
-    public boolean isOpen() {
-        return isOpen;
-    }
-
-    public void setOpen(boolean open) {
-        isOpen = open;
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("BankDeposit{");
+        sb.append("id='").append(id).append('\'');
+        sb.append(", bankName='").append(bankName).append('\'');
+        sb.append(", profitAbility=").append(profitAbility);
+        sb.append(", timeConstraints=").append(timeConstraints);
+        sb.append(", amountOnDeposit=").append(amountOnDeposit);
+        sb.append(", isOpen=").append(isOpen);
+        sb.append(", bankCountry=").append(bankCountry);
+        sb.append(", depositType=").append(depositType);
+        sb.append('}');
+        return sb.toString();
     }
 }

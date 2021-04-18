@@ -1,14 +1,17 @@
 package ru.gmail.gasimov.secondtask.builder;
 
-public enum BankXmlTagEnum {
-    BELARUSBANK_DEPOSIT,
+public enum DepositXmlTag {
+    BANKS,
+    INDIVIDUAL_DEPOSIT,
+    LEGAL_ENTITY_DEPOSIT,
     BANK_NAME,
-    DEPOSITOR,
+    DEPOSITOR_NAME,
+    DEPOSIT_TYPE,
+    BANK_COUNTRY,
+    ENTERPRISE_NAME,
     PROFITABILITY,
     TIME_CONSTRAINTS,
-    AMOUNT_ON_DEPOSIT,
-    DEPOSIT_TYPE,
-    BANK_COUNTRY;
+    AMOUNT_ON_DEPOSIT;
 
     private static final char SEPARATOR = '-';
     private static final char TO_REPLACE = '_';

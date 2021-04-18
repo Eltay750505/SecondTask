@@ -1,15 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bank-deposit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:noNamespaceSchemaLocation="schema.xsd">
+<banks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="schema.xsd">
 
-    <belarusbank-deposit id="w1">
+    <individual-deposit is-open="true" id="w1">
         <bank-name>Belarusbank</bank-name>
-        <depositor>Eltay</depositor>
+        <profitability>2.3</profitability>
+        <time-constraints>2020-01</time-constraints>
+        <amount-on-deposit>610.0</amount-on-deposit>
+        <deposit-type>TERM</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <depositor-name>Egor</depositor-name>
+    </individual-deposit>
+
+    <individual-deposit is-open="true" id="w2">
+        <bank-name>Belarusbank</bank-name>
+        <profitability>3.0</profitability>
+        <time-constraints>2021-03</time-constraints>
+        <amount-on-deposit>265.0</amount-on-deposit>
+        <deposit-type>DEMAND</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <depositor-name>Alex</depositor-name>
+    </individual-deposit>
+
+    <individual-deposit is-open="true" id="w3">
+        <bank-name>Rosbank</bank-name>
+        <profitability>3.4</profitability>
+        <time-constraints>2021-09</time-constraints>
+        <amount-on-deposit>241.0</amount-on-deposit>
+        <deposit-type>SAVINGS</deposit-type>
+        <bank-country>RUSSIA</bank-country>
+        <depositor-name>Eugene</depositor-name>
+    </individual-deposit>
+
+    <individual-deposit is-open="true" id="w4">
+        <bank-name>PNGBankas</bank-name>
+        <profitability>3.2</profitability>
+        <time-constraints>2021-10</time-constraints>
+        <amount-on-deposit>1211.0</amount-on-deposit>
+        <deposit-type>METAL</deposit-type>
+        <bank-country>POLAND</bank-country>
+        <depositor-name>Eltay</depositor-name>
+    </individual-deposit>
+
+    <individual-deposit is-open="true" id="w5">
+        <bank-name>Belarusbank</bank-name>
+        <profitability>3.12</profitability>
+        <time-constraints>2021-12</time-constraints>
+        <amount-on-deposit>712.0</amount-on-deposit>
+        <deposit-type>CUMULATIVE</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <depositor-name>Andrew</depositor-name>
+    </individual-deposit>
+
+    <individual-deposit is-open="true" id="w6">
+        <bank-name>BPSSberbank</bank-name>
         <profitability>3.5</profitability>
         <time-constraints>2021-04</time-constraints>
-        <amount-on-deposit>15.0</amount-on-deposit>
-        <deposit-type>demand</deposit-type>
-        <bank-country>belarus</bank-country>
-    </belarusbank-deposit>
+        <amount-on-deposit>125.0</amount-on-deposit>
+        <deposit-type>TERM</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <depositor-name>Alexander</depositor-name>
+    </individual-deposit>
 
-</bank-deposit>
+    <individual-deposit is-open="true" id="w7">
+        <bank-name>LBBW</bank-name>
+        <profitability>2.9</profitability>
+        <time-constraints>2020-02</time-constraints>
+        <amount-on-deposit>1257.0</amount-on-deposit>
+        <deposit-type>DEMAND</deposit-type>
+        <bank-country>GERMANY</bank-country>
+        <depositor-name>Anastasiya</depositor-name>
+    </individual-deposit>
+
+    <individual-deposit is-open="true" id="w8">
+        <bank-name>Mbank</bank-name>
+        <profitability>3.6</profitability>
+        <time-constraints>2021-12</time-constraints>
+        <amount-on-deposit>3122.0</amount-on-deposit>
+        <deposit-type>METAL</deposit-type>
+        <bank-country>POLAND</bank-country>
+        <depositor-name>Vlad</depositor-name>
+    </individual-deposit>
+
+    <legal-entity-deposit is-open="true" id="w9">
+        <bank-name>NRWBank</bank-name>
+        <profitability>3.9</profitability>
+        <time-constraints>2021-07</time-constraints>
+        <amount-on-deposit>550.0</amount-on-deposit>
+        <deposit-type>DEMAND</deposit-type>
+        <bank-country>GERMANY</bank-country>
+        <enterprise-name>ISSOFT</enterprise-name>
+    </legal-entity-deposit>
+
+    <legal-entity-deposit is-open="true" id="w10">
+        <bank-name>BPSSberbank</bank-name>
+        <profitability>6.9</profitability>
+        <time-constraints>2021-07</time-constraints>
+        <amount-on-deposit>23130.0</amount-on-deposit>
+        <deposit-type>DEMAND</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <enterprise-name>ExpertSoft</enterprise-name>
+    </legal-entity-deposit>
+
+    <legal-entity-deposit is-open="true" id="w11">
+        <bank-name>BPSSberbank</bank-name>
+        <profitability>3.91</profitability>
+        <time-constraints>2021-07</time-constraints>
+        <amount-on-deposit>260.0</amount-on-deposit>
+        <deposit-type>TERM</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <enterprise-name>TheFifthElement</enterprise-name>
+    </legal-entity-deposit>
+
+    <legal-entity-deposit is-open="true" id="w12">
+        <bank-name>BPSSberbank</bank-name>
+        <profitability>13.9</profitability>
+        <time-constraints>2020-03</time-constraints>
+        <amount-on-deposit>5120.0</amount-on-deposit>
+        <deposit-type>CUMULATIVE</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <enterprise-name>AVERSIS</enterprise-name>
+    </legal-entity-deposit>
+
+    <legal-entity-deposit is-open="true" id="w13">
+        <bank-name>BPSSberbank</bank-name>
+        <profitability>3.99</profitability>
+        <time-constraints>2021-07</time-constraints>
+        <amount-on-deposit>2120.0</amount-on-deposit>
+        <deposit-type>METAL</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <enterprise-name>ISSOFT</enterprise-name>
+    </legal-entity-deposit>
+
+    <legal-entity-deposit is-open="true" id="w14">
+        <bank-name>BPSSberbank</bank-name>
+        <profitability>4.9</profitability>
+        <time-constraints>2021-07</time-constraints>
+        <amount-on-deposit>5520.0</amount-on-deposit>
+        <deposit-type>SAVINGS</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <enterprise-name>ISSOFT</enterprise-name>
+    </legal-entity-deposit>
+
+    <legal-entity-deposit is-open="true" id="w15">
+        <bank-name>BPSSberbank</bank-name>
+        <profitability>1.9</profitability>
+        <time-constraints>2021-07</time-constraints>
+        <amount-on-deposit>6420.0</amount-on-deposit>
+        <deposit-type>ESTIMATED</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <enterprise-name>ISSOFT</enterprise-name>
+    </legal-entity-deposit>
+
+    <legal-entity-deposit is-open="true" id="w16">
+        <bank-name>BPSSberbank</bank-name>
+        <profitability>6.9</profitability>
+        <time-constraints>2021-05</time-constraints>
+        <amount-on-deposit>2320.0</amount-on-deposit>
+        <deposit-type>DEMAND</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <enterprise-name>ISSOFT</enterprise-name>
+    </legal-entity-deposit>
+
+    <legal-entity-deposit is-open="true" id="w17">
+        <bank-name>BPSSberbank</bank-name>
+        <profitability>5.9</profitability>
+        <time-constraints>2020-07</time-constraints>
+        <amount-on-deposit>122.0</amount-on-deposit>
+        <deposit-type>TERM</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <enterprise-name>ISSOFT</enterprise-name>
+    </legal-entity-deposit>
+
+</banks>
