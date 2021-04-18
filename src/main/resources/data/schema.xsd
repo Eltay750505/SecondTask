@@ -21,14 +21,14 @@
         <sequence>
             <element name="bank-name" type="string" />
             <element name="profitability">
-                <xsd:restriction base="xsd:string">
+                <xsd:restriction base="xsd:double">
                     <xsd:minInclusive value="0.0"></xsd:minInclusive>
                     <xsd:maxInclusive value="100.0"></xsd:maxInclusive>
                 </xsd:restriction>
             </element>
             <element name="time-constraints" type="gYearMonth" />
             <element name="amount-on-deposit" >
-                <xsd:restriction base="xsd:string">
+                <xsd:restriction base="xsd:double">
                     <xsd:minInclusive value="0"></xsd:minInclusive>
                 </xsd:restriction>
             </element>
