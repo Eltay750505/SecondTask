@@ -20,7 +20,7 @@ public class DepositHandler extends DefaultHandler {
 
     public DepositHandler() {
         bankDeposits = new HashSet<>();
-        tagsWithTextContent = EnumSet.range(DepositXmlTag.BANK_NAME, DepositXmlTag.ENTERPRISE_NAME);
+        tagsWithTextContent = EnumSet.range(DepositXmlTag.BANK_NAME, DepositXmlTag.AMOUNT_ON_DEPOSIT);
     }
 
     public Set<BankDeposit> getDeposits() {
@@ -43,7 +43,7 @@ public class DepositHandler extends DefaultHandler {
 
                 if (attributeName.equals(idAttribute)) {
                     String depositId = attributes.getValue(i);
-                    current.setId(depositId.substring(1));
+                    current.setId(depositId);
                 } else {
                     String isOpen = attributes.getValue(i);
                     boolean isOpenBoolean = Boolean.parseBoolean(isOpen);

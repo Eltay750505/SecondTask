@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
+<schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         targetNamespace="http://www.example.org/banks"
         xmlns:tns="http://www.example.org/banks"
         attributeFormDefault="unqualified" elementFormDefault="qualified">
@@ -20,20 +20,17 @@
     <complexType name="bankDeposit">
         <sequence>
             <element name="bank-name" type="string" />
-            <element name="profitability"><simpleType>
-                <restriction base="double">
-                    <minInclusive value="0.0"></minInclusive>
-                    <maxInclusive value="100.0"></maxInclusive>
-                </restriction>
-            </simpleType>
+            <element name="profitability">
+                <xsd:restriction base="xsd:double">
+                    <xsd:minInclusive value="0.0"></xsd:minInclusive>
+                    <xsd:maxInclusive value="100.0"></xsd:maxInclusive>
+                </xsd:restriction>
             </element>
             <element name="time-constraints" type="gYearMonth" />
-            <element name="amount-on-deposit">
-                <simpleType>
-                    <restriction>
-                        <minInclusive value="0"></minInclusive>
-                    </restriction>
-                </simpleType>
+            <element name="amount-on-deposit" >
+                <xsd:restriction base="xsd:double">
+                    <xsd:minInclusive value="0"></xsd:minInclusive>
+                </xsd:restriction>
             </element>
             <element name="deposit-type" type="tns:depositType"/>
             <element name="bank-country" type="tns:bankCountry"/>
@@ -44,7 +41,7 @@
 
     <complexType name="legalEntityDeposit">
         <complexContent>
-            <extension base="tns:bankDeposit">
+            <extension base="tns:banks">
                 <sequence>
                     <element name="enterprise-name" type="string" />
                 </sequence>
@@ -54,7 +51,7 @@
 
     <complexType name="individualDeposit">
         <complexContent>
-            <extension base="tns:bankDeposit">
+            <extension base="tns:banks">
                 <sequence>
                     <element name="depositor-name" type="string" />
                 </sequence>
@@ -62,26 +59,26 @@
         </complexContent>
     </complexType>
 
-    <simpleType name="depositType">
-        <restriction>
-            <enumeration value="DEMAND"/>
-            <enumeration value="TERM"/>
-            <enumeration value="ESTIMATED"/>
-            <enumeration value="CUMULATIVE"/>
-            <enumeration value="SAVINGS"/>
-            <enumeration value="METAL"/>
-        </restriction>
-    </simpleType>
+    <complexType name="depositType">
+        <xsd:restriction>
+            <xsd:enumeration value="DEMAND"></xsd:enumeration>
+            <xsd:enumeration value="TERM"></xsd:enumeration>
+            <xsd:enumeration value="ESTIMATED"></xsd:enumeration>
+            <xsd:enumeration value="CUMULATIVE"></xsd:enumeration>
+            <xsd:enumeration value="SAVINGS"></xsd:enumeration>
+            <xsd:enumeration value="METAL"></xsd:enumeration>
+        </xsd:restriction>
+    </complexType>
 
-    <simpleType name="bankCountry">
-        <restriction>
-            <enumeration value="BELARUS"/>
-            <enumeration value="RUSSIA"/>
-            <enumeration value="LITHUANIA"/>
-            <enumeration value="GERMANY"/>
-            <enumeration value="POLAND"/>
-        </restriction>
-    </simpleType>
+    <complexType name="bankCountry">
+        <xsd:restriction>
+            <xsd:enumeration value="BELARUS"></xsd:enumeration>
+            <xsd:enumeration value="RUSSIA"></xsd:enumeration>
+            <xsd:enumeration value="LITHUANIA"></xsd:enumeration>
+            <xsd:enumeration value="GERMANY"></xsd:enumeration>
+            <xsd:enumeration value="POLAND"></xsd:enumeration>
+        </xsd:restriction>
+    </complexType>
 
     <element name="bankDeposit" type="tns:bankDeposit" abstract="true" />
     <element name="individual-deposit" type="tns:individualDeposit" substitutionGroup="tns:bankDeposit" />

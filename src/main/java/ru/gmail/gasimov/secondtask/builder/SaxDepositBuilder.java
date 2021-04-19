@@ -1,6 +1,5 @@
 package ru.gmail.gasimov.secondtask.builder;
 
-import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import ru.gmail.gasimov.secondtask.exception.XmlParserCustomException;
@@ -30,6 +29,9 @@ public class SaxDepositBuilder extends DepositBuilder {
 
     @Override
     public void buildSetBanks(String pathName) throws XmlParserCustomException {
+        if (pathName == null || pathName == ""){
+            throw new XmlParserCustomException("Wrong pathName " + pathName);
+        }
         try {
             xmlReader.parse(pathName);
         } catch (IOException e) {

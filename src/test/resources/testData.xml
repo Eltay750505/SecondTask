@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<banks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.example.org/banks"
+       xsi:schemaLocation="http://www.example.org/banks ../resources/data/schema.xsd">
+
+    <individual-deposit is-open="true" id="w1">
+        <bank-name>Belarusbank</bank-name>
+        <profitability>2.3</profitability>
+        <time-constraints>2020-01</time-constraints>
+        <amount-on-deposit>610.0</amount-on-deposit>
+        <deposit-type>TERM</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <depositor-name>Egor</depositor-name>
+    </individual-deposit>
+
+    <individual-deposit is-open="true" id="w2">
+        <bank-name>Belarusbank</bank-name>
+        <profitability>2.3</profitability>
+        <time-constraints>2020-01</time-constraints>
+        <amount-on-deposit>610.0</amount-on-deposit>
+        <deposit-type>TERM</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <depositor-name>Egor</depositor-name>
+    </individual-deposit>
+
+    <individual-deposit is-open="true" id="w3">
+        <bank-name>Belarusbank</bank-name>
+        <profitability>2.3</profitability>
+        <time-constraints>2020-01</time-constraints>
+        <amount-on-deposit>610.0</amount-on-deposit>
+        <deposit-type>TERM</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <depositor-name>Egor</depositor-name>
+    </individual-deposit>
+
+    <legal-entity-deposit is-open="true" id="w4">
+        <bank-name>BPSSberbank</bank-name>
+        <profitability>5.9</profitability>
+        <time-constraints>2020-07</time-constraints>
+        <amount-on-deposit>122.0</amount-on-deposit>
+        <deposit-type>TERM</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <enterprise-name>ISSOFT</enterprise-name>
+    </legal-entity-deposit>
+
+    <legal-entity-deposit is-open="true" id="w5">
+        <bank-name>BPSSberbank</bank-name>
+        <profitability>5.9</profitability>
+        <time-constraints>2020-07</time-constraints>
+        <amount-on-deposit>122.0</amount-on-deposit>
+        <deposit-type>TERM</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <enterprise-name>ISSOFT</enterprise-name>
+    </legal-entity-deposit>
+
+    <legal-entity-deposit is-open="true" id="w6">
+        <bank-name>BPSSberbank</bank-name>
+        <profitability>5.9</profitability>
+        <time-constraints>2020-07</time-constraints>
+        <amount-on-deposit>122.0</amount-on-deposit>
+        <deposit-type>TERM</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <enterprise-name>ISSOFT</enterprise-name>
+    </legal-entity-deposit>
+
+
+</banks>

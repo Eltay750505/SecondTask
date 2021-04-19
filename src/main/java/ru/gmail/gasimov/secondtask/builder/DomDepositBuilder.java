@@ -33,7 +33,10 @@ public class DomDepositBuilder extends DepositBuilder {
 
     @Override
     public void buildSetBanks(String pathName) throws XmlParserCustomException {
-        Document document;
+        if (pathName == null || pathName == ""){
+            throw new XmlParserCustomException("Wrong pathName " + pathName);
+        }
+            Document document;
         try {
             document = documentBuilder.parse(pathName);
             Element root = document.getDocumentElement();
@@ -93,7 +96,7 @@ public class DomDepositBuilder extends DepositBuilder {
             String depositorName = getElementTextContent(element, depositorNameTag);
             bankDeposit = IndividualDeposit
                     .newBuilder()
-                    .id(id.substring(1))
+                    .id(id)
                     .isOpen(isOpen)
                     .bankName(bankName)
                     .profitAbility(profitAbility)
@@ -107,7 +110,7 @@ public class DomDepositBuilder extends DepositBuilder {
             String enterPriseName = getElementTextContent(element, enterPriseNameTag);
             bankDeposit = LegalEntityDeposit
                     .newBuilder()
-                    .id(id.substring(1))
+                    .id(id)
                     .isOpen(isOpen)
                     .bankName(bankName)
                     .profitAbility(profitAbility)

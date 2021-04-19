@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<banks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.example.org/banks"
+       xsi:schemaLocation="http://www.example.org/banks ../resources/testSchema.xsd">
+
+    <individual-deposit is-open="true" id="w1">
+        <bank-name>Belarusbank</bank-name>
+        <profitability>200</profitability>
+        <time-constraints>2020-01</time-constraints>
+        <amount-on-deposit>610.0</amount-on-deposit>
+        <deposit-type>TERM</deposit-type>
+        <bank-country>BELARUS</bank-country>
+        <depositor-name>Egor</depositor-name>
+    </individual-deposit>
+
+</banks>

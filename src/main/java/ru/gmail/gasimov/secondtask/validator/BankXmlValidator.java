@@ -27,6 +27,7 @@ public class BankXmlValidator {
 
     public static boolean validateXMLFile(String xmlPath) throws XmlParserCustomException {
         boolean isValid = true;
+
         String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
         SchemaFactory factory = SchemaFactory.newInstance(language);
 
@@ -38,8 +39,10 @@ public class BankXmlValidator {
         } catch (IOException e) {
             throw new XmlParserCustomException("Cannot open file: " + xmlPath, e);
         } catch (SAXException e) {
-            logger.log(Level.ERROR,"File " + xmlPath + " is not valid: ", e);
+            logger.log(Level.ERROR, "File " + xmlPath + " is not valid: ", e);
             isValid = false;
+        } catch (NullPointerException e){
+            throw new XmlParserCustomException("Null pointer exception was called" + xmlPath, e);
         }
         return isValid;
     }
